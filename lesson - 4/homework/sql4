@@ -1,0 +1,81 @@
+
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Salary DECIMAL(10,2),
+    Department VARCHAR(50)
+);
+
+
+INSERT INTO Employees VALUES
+(1, 'Alice', 'Brown', 70000, 'HR'),
+(2, 'Bob', 'Smith', 50000, 'IT'),
+(3, 'Charlie', 'Johnson', 60000, 'HR'),
+(4, 'David', 'Lee', 80000, 'Finance'),
+(5, 'Eve', 'Walker', 65000, 'HR'),
+(6, 'Frank', 'Davis', 45000, 'IT');
+
+
+CREATE TABLE Productss (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(50),
+    Category VARCHAR(50),
+    Price DECIMAL(10,2)
+);
+
+
+INSERT INTO Productss VALUES
+(1, 'Laptop', 'Electronics', 1200.00),
+(2, 'Mouse', 'Electronics', 25.00),
+(3, 'Notebook', 'Stationery', 5.00),
+(4, 'Tablet', 'Electronics', 300.00),
+(5, 'Pen', 'Stationery', 2.50),
+(6, 'Backpack', 'Accessories', 80.00),
+(7, 'Keyboard', 'Electronics', 100.00),
+(8, 'Charger', 'Electronics', 60.00),
+(9, 'Stapler', 'Stationery', 15.00);
+
+
+CREATE TABLE Customerss (
+    CustomerID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50)
+);
+
+
+INSERT INTO Customerss VALUES
+(1, 'Alice', 'Smith'),
+(2, 'Andrew', 'Johnson'),
+(3, 'Brian', 'Lee'),
+(4, 'Amanda', 'Clark'),
+(5, 'Daniel', 'Brown');
+
+SELECT TOP 5 * 
+FROM Employees;
+
+
+
+SELECT * from Productss 
+WHERE Price > 100;
+
+
+SELECT * 
+FROM Customerss
+WHERE FirstName LIKE 'A%';
+
+
+SELECT * 
+FROM Productss
+ORDER BY Price ASC;
+
+
+SELECT * 
+FROM Employees
+WHERE Salary >= 60000 AND Department = 'HR';
+
+
+SELECT * 
+FROM Productss
+WHERE Price BETWEEN 50 AND 100;
+
